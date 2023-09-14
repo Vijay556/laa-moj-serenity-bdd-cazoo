@@ -23,7 +23,7 @@ public class TextFileReadWriter {
     }
 
     public List<Car> getCarDetails(String file_name) {
-        String carDara = read(SRC_TEST_RESOURCES_FILES + file_name);
+        String carDara = read(file_name);
         String[] outputLines = carDara.split("\r\n*");
         List<Car> carList = new ArrayList<>();
         List<String> list = new ArrayList<>(Arrays.stream(outputLines).toList());
