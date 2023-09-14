@@ -31,9 +31,12 @@ public class TextFileReadWriter {
             if (!s.isEmpty() && !s.equals("REGISTRATION,MAKE,MODEL")) {
                 Car c = new Car();
                 String[] carDetails = s.split(",");
-                c.setReg(carDetails[0]);
-                c.setMake(carDetails[1]);
-                c.setModel(carDetails[2]);
+                try {
+                    c.setReg(carDetails[0]);
+                    c.setMake(carDetails[1]);
+                    c.setModel(carDetails[2]);
+                } catch (ArrayIndexOutOfBoundsException ignored) {
+                }
                 carList.add(c);
             }
         }
