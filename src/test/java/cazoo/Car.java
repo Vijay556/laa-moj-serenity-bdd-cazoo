@@ -16,6 +16,7 @@ public class Car {
 
     public Car() {}
 
+    // for some reason the above @Getter @Setter methods are not functioning for me hence I had to write these following setters and getters
     public String getReg() {
         return reg;
     }
@@ -43,5 +44,27 @@ public class Car {
     @Override
     public String toString() {
         return this.reg + " + " + this.make + " + " + this.model;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+
+        if (obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        final Car other = (Car) obj;
+        if ((this.reg == null) ? (other.reg != null) : !this.reg.equals(other.reg)) {
+            return false;
+        }
+
+        if (this.make != other.make) {
+            return false;
+        }
+
+        return this.model == other.model;
     }
 }
