@@ -42,8 +42,7 @@ public class PullVehicleDetailsStepDefinitions {
         for (Car expectedCar : expectedCarDetails) {
             for (Car actualCar : actualCarListMakeModel) {
                 if (expectedCar.getReg().equals(actualCar.getReg())) {
-                    assertEquals(expectedCar.getMake(), actualCar.getMake());
-                    assertEquals(expectedCar.getModel(), actualCar.getModel());
+                    assertEquals(expectedCar, actualCar);
                 }
             }
         }
